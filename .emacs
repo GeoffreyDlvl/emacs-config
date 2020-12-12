@@ -50,12 +50,20 @@
       (message "Opening file...")
     (message "Aborting")))
 
+
 (define-key global-map "\M-o" 'other-window)
 
 
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
+;; fix indentation style for c/c++
+(defun my-c++-mode-hook ()
+  (setq c-basic-offset 2)
+  (c-set-offset 'substatement-open 0))
+  (c-set-offset 'case-label '+)
+  (c-set-offset 'statement-case-open 0)
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 ;; auto new line when going down
 (setq next-line-add-newlines t)
