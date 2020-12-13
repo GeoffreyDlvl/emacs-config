@@ -54,6 +54,10 @@
 (define-key global-map "\M-o" 'other-window)
 
 
+;; highlight current line
+(global-hl-line-mode +1)
+
+
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
